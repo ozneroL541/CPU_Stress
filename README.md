@@ -6,7 +6,6 @@ Program to stress the CPU.
 ## Index
  - [Description](#description)
  - [Download](#download)
- - [Configuration](#configuration)
  - [Compilation](#compilation)
  - [Execution](#execution)
  - [Documentation](#documentation)
