@@ -1,7 +1,7 @@
 <a href="https://github.com/ozneroL541/Join_Blocks_Alg/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ozneroL541/Join_Blocks_Alg?color=2b9348" alt="License"/></a>
 
-# Join_Blocks_Alg
-Algorithms for the cartesian product between two tables.
+# CPU_Stress
+Program to stress the CPU.
 
 ## Index
  - [Description](#description)
@@ -14,19 +14,12 @@ Algorithms for the cartesian product between two tables.
  - [License](#license)
 
 ## Description
-This program simulates different algorithms in order show how many steps they take to calculate the cartesian product between two tables.
-The program is parametrical respect the tables, R and S and the size of the buffer.
-The size of the buffer must be bigger then 3 and it's consider only to perform multi-block algorithms, 
-for the others it's considered 3 block.
+This program is based on the simulation program [Join_Blocks_Alg](#https://github.com/ozneroL541/Join_Blocks_Alg.git).
 
 ## Download
 Download the source code from Github
 
-    git clone https://github.com/ozneroL541/Join_Blocks_Alg.git
-
-## Configuration
-Change tables length modifing the macros in `include/tables.h`.
-Change avaiable blocks in the buffer modifing the macro in `include/buffer_blocks`.
+    git clone https://github.com/ozneroL541/CPU_Stress.git
 
 ## Compilation
 > It is suggested to use ICX Intel Compiler to compile this program, if it is not avaiable, GCC will be used.
