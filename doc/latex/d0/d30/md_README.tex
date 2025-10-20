@@ -1,46 +1,43 @@
 \chapter{README }
 \hypertarget{md_README}{}\label{md_README}\index{README@{README}}
-\href{https://github.com/ozneroL541/Join_Blocks_Alg/blob/master/LICENSE}{\texttt{}}\hypertarget{md_README_autotoc_md0}{}\doxysection{\texorpdfstring{Join\+\_\+\+Blocks\+\_\+\+Alg}{Join\+\_\+\+Blocks\+\_\+\+Alg}}\label{md_README_autotoc_md0}
-Algorithms for the cartesian product between two tables.\hypertarget{md_README_autotoc_md1}{}\doxysubsection{\texorpdfstring{Index}{Index}}\label{md_README_autotoc_md1}
+\href{https://github.com/ozneroL541/CPU_Stress/blob/master/LICENSE}{\texttt{}}\hypertarget{md_README_autotoc_md0}{}\doxysection{\texorpdfstring{CPU\+\_\+\+Stress}{CPU\+\_\+\+Stress}}\label{md_README_autotoc_md0}
+Program to stress the CPU.\hypertarget{md_README_autotoc_md1}{}\doxysubsection{\texorpdfstring{Index}{Index}}\label{md_README_autotoc_md1}
 
 \begin{DoxyItemize}
 \item Description
 \item Download
-\item Configuration
 \item Compilation
 \item Execution
 \item Documentation
 \item Author
 \item License
 \end{DoxyItemize}\hypertarget{md_README_autotoc_md2}{}\doxysubsection{\texorpdfstring{Description}{Description}}\label{md_README_autotoc_md2}
-This program simulates different algorithms in order show how many steps they take to calculate the cartesian product between two tables. The program is parametrical respect the tables, R and S and the size of the buffer. The size of the buffer must be bigger then 3 and it\textquotesingle{}s consider only to perform multi-\/block algorithms, for the others it\textquotesingle{}s considered 3 block.\hypertarget{md_README_autotoc_md3}{}\doxysubsection{\texorpdfstring{Download}{Download}}\label{md_README_autotoc_md3}
-Download the source code from Github \begin{DoxyVerb}git clone https://github.com/ozneroL541/Join_Blocks_Alg.git
+This program is based on the simulation program Join\+\_\+\+Blocks\+\_\+\+Alg.\hypertarget{md_README_autotoc_md3}{}\doxysubsection{\texorpdfstring{Download}{Download}}\label{md_README_autotoc_md3}
+Download the source code from Github \begin{DoxyVerb}git clone https://github.com/ozneroL541/CPU_Stress.git
 \end{DoxyVerb}
-\hypertarget{md_README_autotoc_md4}{}\doxysubsection{\texorpdfstring{Configuration}{Configuration}}\label{md_README_autotoc_md4}
-Change tables length modifing the macros in {\ttfamily \doxylink{tables_8h}{include/tables.\+h}}. Change avaiable blocks in the buffer modifing the macro in {\ttfamily include/buffer\+\_\+blocks}.\hypertarget{md_README_autotoc_md5}{}\doxysubsection{\texorpdfstring{Compilation}{Compilation}}\label{md_README_autotoc_md5}
+\hypertarget{md_README_autotoc_md4}{}\doxysubsection{\texorpdfstring{Compilation}{Compilation}}\label{md_README_autotoc_md4}
 \begin{quote}
 It is suggested to use ICX Intel Compiler to compile this program, if it is not avaiable, GCC will be used. \end{quote}
 
 
 To compile run\+: \begin{DoxyVerb}make
 \end{DoxyVerb}
-\hypertarget{md_README_autotoc_md6}{}\doxysubsection{\texorpdfstring{Execution}{Execution}}\label{md_README_autotoc_md6}
-To execute the program run bin/blocks $<$\+R table blocks$>$ \sout{ $<$\+Buffer blocks$>$}
+\hypertarget{md_README_autotoc_md5}{}\doxysubsection{\texorpdfstring{Execution}{Execution}}\label{md_README_autotoc_md5}
+To execute the program run 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{bin/cpu\_stress}
 
-\sout{}\hypertarget{md_README_autotoc_md7}{}\doxysubsection{\texorpdfstring{\sout{Documentation}}{\sout{Documentation}}}\label{md_README_autotoc_md7}
-\sout{ To document this software use\+: \begin{DoxyVerb}doxygen docfile
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md6}{}\doxysubsection{\texorpdfstring{Documentation}{Documentation}}\label{md_README_autotoc_md6}
+To document this software use\+: \begin{DoxyVerb}doxygen docfile
 \end{DoxyVerb}
-}
+\hypertarget{md_README_autotoc_md7}{}\doxysubsection{\texorpdfstring{Author}{Author}}\label{md_README_autotoc_md7}
 
-\sout{}\hypertarget{md_README_autotoc_md8}{}\doxysubsection{\texorpdfstring{\sout{Author}}{\sout{Author}}}\label{md_README_autotoc_md8}
-\sout{
 \begin{DoxyItemize}
 \item Radice Lorenzo @oznero\+L541
-\end{DoxyItemize}}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md8}{}\doxysubsection{\texorpdfstring{License}{License}}\label{md_README_autotoc_md8}
+CPU\+\_\+\+Stress is free software\+: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-\sout{}\hypertarget{md_README_autotoc_md9}{}\doxysubsection{\texorpdfstring{\sout{License}}{\sout{License}}}\label{md_README_autotoc_md9}
-\sout{ Join\+\_\+\+Blocks\+\_\+\+Alg is free software\+: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.}
+CPU\+\_\+\+Stress is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
-\sout{Join\+\_\+\+Blocks\+\_\+\+Alg is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.}
-
-\sout{You should have received a copy of the GNU General Public License along with Join\+\_\+\+Blocks\+\_\+\+Alg. If not, see \href{http://www.gnu.org/licenses/}{\texttt{http\+://www.\+gnu.\+org/licenses/}}. }
+You should have received a copy of the GNU General Public License along with CPU\+\_\+\+Stress. If not, see \href{http://www.gnu.org/licenses/}{\texttt{http\+://www.\+gnu.\+org/licenses/}}. 

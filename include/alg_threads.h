@@ -3,7 +3,7 @@
 
 #include "product_executor.h"
 #include "tables.h"
-#include <pthread.h>
+#include "threads.h"
 
 /** 
  * Structure to hold parameters and result for the thread
@@ -16,7 +16,7 @@ typedef struct {
     /** Result of the algorithm execution */
     unsigned long result;
     /** Thread identifier */
-    pthread_t thread;
+    thread_t thread;
 } product_t;
 
 /**
@@ -24,7 +24,7 @@ typedef struct {
  * @param params Pointer to the parameters for the algorithm
  * @return NULL
  */
-void * run_algorithm(void * params);
+THREAD_RETURN run_algorithm(void * params);
 
 /** 
  * Start a new thread to run the algorithm

@@ -83,25 +83,27 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../db/d70/product__executor_8h_source.html">product_executor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../df/d2c/tables_8h_source.html">tables.h</a>&quot;</code><br />
-<code>#include &lt;pthread.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d96/threads_8h_source.html">threads.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for alg_threads.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/d77/alg__threads_8h__incl.png" border="0" usemap="#ainclude_2alg__threads_8h" loading="lazy" alt=""/></div>
 <map name="ainclude_2alg__threads_8h" id="ainclude_2alg__threads_8h">
-<area shape="rect" title=" " alt="" coords="165,5,308,31"/>
-<area shape="rect" href="../../db/d70/product__executor_8h.html" title=" " alt="" coords="68,79,199,105"/>
-<area shape="poly" title=" " alt="" coords="220,34,165,72,162,68,217,29"/>
+<area shape="rect" title=" " alt="" coords="170,5,313,31"/>
+<area shape="rect" href="../../db/d70/product__executor_8h.html" title=" " alt="" coords="74,79,204,105"/>
+<area shape="poly" title=" " alt="" coords="226,34,170,72,167,68,223,29"/>
 <area shape="rect" href="../../df/d2c/tables_8h.html" title=" " alt="" coords="203,153,270,178"/>
-<area shape="poly" title=" " alt="" coords="239,31,239,137,234,137,234,31"/>
-<area shape="rect" title=" " alt="" coords="274,79,348,105"/>
-<area shape="poly" title=" " alt="" coords="251,30,290,66,286,70,247,33"/>
+<area shape="poly" title=" " alt="" coords="244,31,240,137,235,137,239,31"/>
+<area shape="rect" href="../../db/d96/threads_8h.html" title=" " alt="" coords="288,79,363,105"/>
+<area shape="poly" title=" " alt="" coords="258,30,302,67,298,71,254,34"/>
 <area shape="rect" href="../../dd/ddb/tables__manager_8h.html" title=" " alt="" coords="5,153,129,178"/>
-<area shape="poly" title=" " alt="" coords="125,107,91,143,87,139,121,103"/>
+<area shape="poly" title=" " alt="" coords="129,107,92,143,88,140,125,103"/>
 <area shape="rect" title=" " alt="" coords="134,226,197,252"/>
-<area shape="poly" title=" " alt="" coords="139,104,162,210,157,211,134,106"/>
+<area shape="poly" title=" " alt="" coords="144,105,163,210,158,211,139,105"/>
 <area shape="poly" title=" " alt="" coords="85,177,139,215,135,219,82,181"/>
 <area shape="poly" title=" " alt="" coords="227,180,190,217,186,213,223,177"/>
+<area shape="rect" title=" " alt="" coords="294,153,368,178"/>
+<area shape="poly" title=" " alt="" coords="329,105,332,137,326,137,324,105"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -109,11 +111,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/de9/alg__threads_8h__dep__incl.png" border="0" usemap="#ainclude_2alg__threads_8hdep" loading="lazy" alt=""/></div>
 <map name="ainclude_2alg__threads_8hdep" id="ainclude_2alg__threads_8hdep">
-<area shape="rect" title=" " alt="" coords="56,5,200,31"/>
-<area shape="rect" href="../../d5/d48/alg__threads_8c.html" title=" " alt="" coords="5,79,126,105"/>
-<area shape="poly" title=" " alt="" coords="110,44,78,80,74,77,106,41"/>
-<area shape="rect" href="../../d0/d29/main_8c.html" title=" " alt="" coords="150,79,232,105"/>
-<area shape="poly" title=" " alt="" coords="151,41,182,77,178,80,147,44"/>
+<area shape="rect" title=" " alt="" coords="104,5,247,31"/>
+<area shape="rect" href="../../d4/d0f/stresser_8h.html" title=" " alt="" coords="42,79,165,105"/>
+<area shape="poly" title=" " alt="" coords="154,44,117,80,114,77,151,40"/>
+<area shape="rect" href="../../d5/d48/alg__threads_8c.html" title=" " alt="" coords="188,79,309,105"/>
+<area shape="poly" title=" " alt="" coords="200,40,238,77,234,80,197,44"/>
+<area shape="rect" href="../../d0/d29/main_8c.html" title=" " alt="" coords="5,153,87,178"/>
+<area shape="poly" title=" " alt="" coords="86,118,58,154,54,151,82,115"/>
+<area shape="rect" href="../../dd/da2/stresser_8c.html" title=" " alt="" coords="110,153,211,178"/>
+<area shape="poly" title=" " alt="" coords="124,115,153,151,149,154,120,118"/>
 </map>
 </div>
 </div>
@@ -125,7 +131,7 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1cf9e6525e357db72279a864f314bcf3" id="r_a1cf9e6525e357db72279a864f314bcf3"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cf9e6525e357db72279a864f314bcf3">run_algorithm</a> (void *params)</td></tr>
+<tr class="memitem:a513852fc4296c35f69448a907436c5ac" id="r_a513852fc4296c35f69448a907436c5ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d96/threads_8h.html#a551918420acd27a8e8502a861d38e3a6">THREAD_RETURN</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a513852fc4296c35f69448a907436c5ac">run_algorithm</a> (void *params)</td></tr>
 <tr class="memitem:a4501d3d79aea75f96097444cb533a85d" id="r_a4501d3d79aea75f96097444cb533a85d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d65/structproduct__t.html">product_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4501d3d79aea75f96097444cb533a85d">start_alg</a> (<a class="el" href="../../d5/d54/structproduct__params.html">product_params</a> *params)</td></tr>
 <tr class="memitem:a44c325b42ee050db08e4b853aa9047d0" id="r_a44c325b42ee050db08e4b853aa9047d0"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44c325b42ee050db08e4b853aa9047d0">join_alg</a> (<a class="el" href="../../d7/d65/structproduct__t.html">product_t</a> *p)</td></tr>
 <tr class="memitem:a83a3bb02511d61f2ba553229079906d4" id="r_a83a3bb02511d61f2ba553229079906d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d50/structtables.html">tables</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83a3bb02511d61f2ba553229079906d4">init_rs</a> (const unsigned long r_blocks, const unsigned long s_blocks)</td></tr>
@@ -184,17 +190,18 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Result of the algorithm execution, 0 on error </dd></dl>
+<p>Result</p>
 
 </div>
 </div>
-<a id="a1cf9e6525e357db72279a864f314bcf3" name="a1cf9e6525e357db72279a864f314bcf3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cf9e6525e357db72279a864f314bcf3">&#9670;&#160;</a></span>run_algorithm()</h2>
+<a id="a513852fc4296c35f69448a907436c5ac" name="a513852fc4296c35f69448a907436c5ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a513852fc4296c35f69448a907436c5ac">&#9670;&#160;</a></span>run_algorithm()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * run_algorithm </td>
+          <td class="memname"><a class="el" href="../../db/d96/threads_8h.html#a551918420acd27a8e8502a861d38e3a6">THREAD_RETURN</a> run_algorithm </td>
           <td>(</td>
           <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>params</em></span></td><td>)</td>
           <td></td>
@@ -208,6 +215,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>NULL </dd></dl>
+<p>Product thread</p>
 
 </div>
 </div>
@@ -232,6 +240,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the <a class="el" href="../../d7/d65/structproduct__t.html">product_t</a> structure containing thread info </dd></dl>
+<p>Product thread</p>
+<p>Thread creation result</p>
 
 </div>
 </div>

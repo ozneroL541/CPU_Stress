@@ -2,13 +2,13 @@
 \hypertarget{alg__threads_8h}{}\label{alg__threads_8h}\index{include/alg\_threads.h@{include/alg\_threads.h}}
 {\ttfamily \#include "{}product\+\_\+executor.\+h"{}}\newline
 {\ttfamily \#include "{}tables.\+h"{}}\newline
-{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include "{}threads.\+h"{}}\newline
 Include dependency graph for alg\+\_\+threads.\+h\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=337pt]{d0/d77/alg__threads_8h__incl}
+\includegraphics[width=350pt]{d0/d77/alg__threads_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -16,7 +16,7 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=250pt]{d3/de9/alg__threads_8h__dep__incl}
+\includegraphics[width=308pt]{d3/de9/alg__threads_8h__dep__incl}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Data Structures}
@@ -27,7 +27,7 @@ struct \mbox{\hyperlink{structproduct__t}{product\+\_\+t}}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{alg__threads_8h_a1cf9e6525e357db72279a864f314bcf3}{run\+\_\+algorithm}} (void \texorpdfstring{$\ast$}{*}params)
+\mbox{\hyperlink{threads_8h_a551918420acd27a8e8502a861d38e3a6}{THREAD\+\_\+\+RETURN}} \mbox{\hyperlink{alg__threads_8h_a513852fc4296c35f69448a907436c5ac}{run\+\_\+algorithm}} (void \texorpdfstring{$\ast$}{*}params)
 \item 
 \mbox{\hyperlink{structproduct__t}{product\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{alg__threads_8h_a4501d3d79aea75f96097444cb533a85d}{start\+\_\+alg}} (\mbox{\hyperlink{structproduct__params}{product\+\_\+params}} \texorpdfstring{$\ast$}{*}params)
 \item 
@@ -74,11 +74,11 @@ Join the thread and retrieve the result
 \begin{DoxyReturn}{Returns}
 Result of the algorithm execution, 0 on error 
 \end{DoxyReturn}
-\Hypertarget{alg__threads_8h_a1cf9e6525e357db72279a864f314bcf3}\index{alg\_threads.h@{alg\_threads.h}!run\_algorithm@{run\_algorithm}}
+Result\Hypertarget{alg__threads_8h_a513852fc4296c35f69448a907436c5ac}\index{alg\_threads.h@{alg\_threads.h}!run\_algorithm@{run\_algorithm}}
 \index{run\_algorithm@{run\_algorithm}!alg\_threads.h@{alg\_threads.h}}
 \doxysubsubsection{\texorpdfstring{run\_algorithm()}{run\_algorithm()}}
-{\footnotesize\ttfamily \label{alg__threads_8h_a1cf9e6525e357db72279a864f314bcf3} 
-void \texorpdfstring{$\ast$}{*} run\+\_\+algorithm (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{params}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{alg__threads_8h_a513852fc4296c35f69448a907436c5ac} 
+\mbox{\hyperlink{threads_8h_a551918420acd27a8e8502a861d38e3a6}{THREAD\+\_\+\+RETURN}} run\+\_\+algorithm (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{params}{}\end{DoxyParamCaption})}
 
 Thread function to run the product simulation algorithm 
 \begin{DoxyParams}{Parameters}
@@ -88,7 +88,7 @@ Thread function to run the product simulation algorithm
 \begin{DoxyReturn}{Returns}
 NULL 
 \end{DoxyReturn}
-\Hypertarget{alg__threads_8h_a4501d3d79aea75f96097444cb533a85d}\index{alg\_threads.h@{alg\_threads.h}!start\_alg@{start\_alg}}
+Product thread\Hypertarget{alg__threads_8h_a4501d3d79aea75f96097444cb533a85d}\index{alg\_threads.h@{alg\_threads.h}!start\_alg@{start\_alg}}
 \index{start\_alg@{start\_alg}!alg\_threads.h@{alg\_threads.h}}
 \doxysubsubsection{\texorpdfstring{start\_alg()}{start\_alg()}}
 {\footnotesize\ttfamily \label{alg__threads_8h_a4501d3d79aea75f96097444cb533a85d} 
@@ -102,3 +102,6 @@ Start a new thread to run the algorithm
 \begin{DoxyReturn}{Returns}
 Pointer to the \doxylink{structproduct__t}{product\+\_\+t} structure containing thread info 
 \end{DoxyReturn}
+Product thread
+
+Thread creation result

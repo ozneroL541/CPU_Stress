@@ -1,6 +1,6 @@
 #include "stresser.h"
 
-void * mini_stress(void *args) {
+THREAD_RETURN mini_stress(void *args) {
     /** Number of blocks in R table */
     unsigned long br = 1024;
     /** Number of blocks in S table */
@@ -16,8 +16,8 @@ void * mini_stress(void *args) {
         join_alg(t);
         start_alg(p);
     }
-    
-    pthread_exit(args);
+
+    return args;
 }
 
 void stress_test(void) {
@@ -26,18 +26,27 @@ void stress_test(void) {
     /** Index */
     unsigned long i = 0;
     /** Threads */
-    pthread_t * threads = NULL;
+    thread_t * threads = NULL;
 
     /* Allocate threads */
-    threads = (pthread_t *)malloc(sizeof(pthread_t) * cpu_threads);
+    threads = (thread_t *)malloc(sizeof(thread_t) * cpu_threads);
     if (threads == NULL) {
         return;
     }
 
     for (i = 0; i < cpu_threads; i++) {
-        pthread_create(&threads[i], NULL, mini_stress, NULL);
+        #ifdef _WIN32
+            threads[i] = CreateThread(NULL, 0, mini_stress, NULL, 0, NULL);
+        #else
+            pthread_create(&threads[i], NULL, mini_stress, NULL);
+        #endif
     }
     for (i = 0; i < cpu_threads; i++) {
-        pthread_join(threads[i], NULL);
+        #ifdef _WIN32
+            WaitForSingleObject(threads[i], INFINITE);
+            CloseHandle(threads[i]);
+        #else
+            pthread_join(threads[i], NULL);
+        #endif
     }
 }

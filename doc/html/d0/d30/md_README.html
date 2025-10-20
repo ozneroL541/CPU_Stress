@@ -74,16 +74,15 @@ $(function() {
   <div class="headertitle"><div class="title">README </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a href="https://github.com/ozneroL541/Join_Blocks_Alg/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ozneroL541/Join_Blocks_Alg?color=2b9348" alt="License" class="inline"/></a></p>
+<div class="textblock"><p><a href="https://github.com/ozneroL541/CPU_Stress/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ozneroL541/CPU_Stress?color=2b9348" alt="License" class="inline"/></a></p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md0"></a>
-Join_Blocks_Alg</h1>
-<p>Algorithms for the cartesian product between two tables.</p>
+CPU_Stress</h1>
+<p>Program to stress the CPU.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 Index</h2>
 <ul>
 <li>Description</li>
 <li>Download</li>
-<li>Configuration</li>
 <li>Compilation</li>
 <li>Execution</li>
 <li>Documentation</li>
@@ -92,40 +91,32 @@ Index</h2>
 </ul>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 Description</h2>
-<p>This program simulates different algorithms in order show how many steps they take to calculate the cartesian product between two tables. The program is parametrical respect the tables, R and S and the size of the buffer. The size of the buffer must be bigger then 3 and it's consider only to perform multi-block algorithms, for the others it's considered 3 block.</p>
+<p>This program is based on the simulation program Join_Blocks_Alg.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 Download</h2>
-<p>Download the source code from Github </p><pre class="fragment">git clone https://github.com/ozneroL541/Join_Blocks_Alg.git
+<p>Download the source code from Github </p><pre class="fragment">git clone https://github.com/ozneroL541/CPU_Stress.git
 </pre><h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
-Configuration</h2>
-<p>Change tables length modifing the macros in <span class="tt"><a class="el" href="../../df/d2c/tables_8h.html">include/tables.h</a></span>. Change avaiable blocks in the buffer modifing the macro in <span class="tt">include/buffer_blocks</span>.</p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 Compilation</h2>
 <blockquote class="doxtable">
 <p>It is suggested to use ICX Intel Compiler to compile this program, if it is not avaiable, GCC will be used. </p>
 </blockquote>
 <p>To compile run: </p><pre class="fragment">make
-</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
 Execution</h2>
-<p>To execute the program run bin/blocks &lt;R table blocks&gt; <s> &lt;Buffer blocks&gt;</s></p>
-<p><s></s></p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
-<s>Documentation</s></h2>
-<p><s> To document this software use: </p><pre class="fragment">doxygen docfile
-</pre><p></s></p>
-<p><s></s></p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
-<s>Author</s></h2>
-<p><s></p><ul>
+<p>To execute the program run </p><div class="fragment"><div class="line">bin/cpu_stress</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Documentation</h2>
+<p>To document this software use: </p><pre class="fragment">doxygen docfile
+</pre><h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Author</h2>
+<ul>
 <li>Radice Lorenzo @ozneroL541</li>
 </ul>
-<p></s></p>
-<p><s></s></p>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
-<s>License</s></h2>
-<p><s> Join_Blocks_Alg is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</s></p>
-<p><s>Join_Blocks_Alg is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</s></p>
-<p><s>You should have received a copy of the GNU General Public License along with Join_Blocks_Alg. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. </s></p>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+License</h2>
+<p>CPU_Stress is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
+<p>CPU_Stress is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
+<p>You should have received a copy of the GNU General Public License along with CPU_Stress. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->

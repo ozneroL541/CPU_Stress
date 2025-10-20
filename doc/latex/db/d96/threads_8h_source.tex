@@ -1,0 +1,18 @@
+\doxysection{threads.\+h}
+\hypertarget{threads_8h_source}{}\label{threads_8h_source}\index{include/threads.h@{include/threads.h}}
+\mbox{\hyperlink{threads_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ THREADS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ THREADS\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\ \ \ \ \#ifdef\ \_WIN32}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#include\ <windows.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ THREAD\_RETURN\ DWORD\ WINAPI}}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ HANDLE\ \mbox{\hyperlink{threads_8h_aa406fd87cfd69d7c0a93b6a241978712}{thread\_t}};}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\ \ \ \ \#else}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#include\ <pthread.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \#define\ THREAD\_RETURN\ void\ *}}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typedef}\ pthread\_t\ \mbox{\hyperlink{threads_8h_aa406fd87cfd69d7c0a93b6a241978712}{thread\_t}};}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \#endif}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

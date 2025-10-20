@@ -1,0 +1,18 @@
+\doxysection{cpu\+\_\+specs.\+h}
+\hypertarget{cpu__specs_8h_source}{}\label{cpu__specs_8h_source}\index{include/cpu\_specs.h@{include/cpu\_specs.h}}
+\mbox{\hyperlink{cpu__specs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CPU\_SPECS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CPU\_SPECS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifdef\ \_WIN32}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\ \ \ \ \#include\ <windows.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#elif\ defined(\_\_linux\_\_)\ ||\ defined(\_\_unix\_\_)\ ||\ defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\ \ \ \ \#include\ <unistd.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{short}\ \mbox{\hyperlink{cpu__specs_8h_a2395dedb039eb86f7b7de69ffa009d9a}{get\_cpu\_threads}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

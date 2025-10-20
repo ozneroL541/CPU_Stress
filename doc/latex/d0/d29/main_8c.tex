@@ -1,12 +1,7 @@
 \doxysection{src/main.c File Reference}
 \hypertarget{main_8c}{}\label{main_8c}\index{src/main.c@{src/main.c}}
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include "{}alg\+\_\+threads.\+h"{}}\newline
-{\ttfamily \#include "{}original\+\_\+alg.\+h"{}}\newline
-{\ttfamily \#include "{}modified\+\_\+alg.\+h"{}}\newline
-{\ttfamily \#include "{}original\+\_\+multi\+\_\+block\+\_\+alg.\+h"{}}\newline
-{\ttfamily \#include "{}modified\+\_\+multi\+\_\+block\+\_\+alg.\+h"{}}\newline
-{\ttfamily \#include "{}product\+\_\+executor.\+h"{}}\newline
+{\ttfamily \#include "{}stresser.\+h"{}}\newline
 Include dependency graph for main.\+c\+:
 \nopagebreak
 \begin{figure}[H]
@@ -15,65 +10,19 @@ Include dependency graph for main.\+c\+:
 \includegraphics[width=350pt]{d4/d10/main_8c__incl}
 \end{center}
 \end{figure}
-\doxysubsubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{main_8c_aaa53220a3cb91c9d3ce9d3d54ab1cc53}{ROUNDUP\+\_\+\+DIVISION}}(dividend,  divisor)
-\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
 \end{DoxyCompactItemize}
-
-
-\label{doc-define-members}
-\Hypertarget{main_8c_doc-define-members}
-\doxysubsection{Macro Definition Documentation}
-\Hypertarget{main_8c_aaa53220a3cb91c9d3ce9d3d54ab1cc53}\index{main.c@{main.c}!ROUNDUP\_DIVISION@{ROUNDUP\_DIVISION}}
-\index{ROUNDUP\_DIVISION@{ROUNDUP\_DIVISION}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{ROUNDUP\_DIVISION}{ROUNDUP\_DIVISION}}
-{\footnotesize\ttfamily \label{main_8c_aaa53220a3cb91c9d3ce9d3d54ab1cc53} 
-\#define ROUNDUP\+\_\+\+DIVISION(\begin{DoxyParamCaption}\item[{}]{dividend}{, }\item[{}]{divisor}{}\end{DoxyParamCaption})}
-
-{\bfseries Value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\ \ \ \ ((\textcolor{keywordtype}{unsigned}\ long)((dividend\ \%\ divisor)\ ==\ 0)\ ?\ (dividend\ /\ divisor)\ :\ ((dividend\ /\ divisor)\ +\ 1))}
-
-\end{DoxyCode}
 
 
 \label{doc-func-members}
 \Hypertarget{main_8c_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{main_8c_a0ddf1224851353fc92bfbff6f499fa97}\index{main.c@{main.c}!main@{main}}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{main.c@{main.c}!main@{main}}
 \index{main@{main}!main.c@{main.c}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
-{\footnotesize\ttfamily \label{main_8c_a0ddf1224851353fc92bfbff6f499fa97} 
-int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
 
-Original algorithm
-
-Modified algorithm
-
-Original multi-\/block algorithm
-
-Modified multi-\/block algorithm
-
-Product threads
-
-Original algorithm thread
-
-Modified algorithm thread
-
-Original multi-\/block algorithm thread
-
-Modified multi-\/block algorithm thread
-
-Number of blocks in R
-
-Number of blocks in S
-
-Number of blocks in the buffer
-
-Tables structure
