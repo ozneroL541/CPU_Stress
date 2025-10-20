@@ -1,4 +1,5 @@
 #include "stresser.h"
+#include <stdio.h>
 
 THREAD_RETURN mini_stress(void *args) {
     /** Number of blocks in R table */
@@ -6,16 +7,28 @@ THREAD_RETURN mini_stress(void *args) {
     /** Number of blocks in S table */
     unsigned long bs = 1024;
     /** Tables */
-    tables * tbls = init_rs(br, bs);
+    tables * tbls = NULL;
     /** Product parameters */
-    product_params * p = init_product_params(tbls, init_alg_c(original_algorithm), 0);
+    product_params * p = NULL;
     /** Thread */
-    product_t * t = start_alg(p);
+    product_t * t = NULL;
+    unsigned char i = 0;
 
-    while (1) {
-        join_alg(t);
-        start_alg(p);
+    if ((tbls = init_rs(br, bs)) == NULL){
+        return (THREAD_RETURN) 1;
     }
+    if ((p = init_product_params(tbls, init_alg_c(original_algorithm), 0)) == NULL) {
+        free_tables(tbls, 1);
+        return (THREAD_RETURN) 1;
+    }
+
+    while (i < 5) {
+        t = start_alg(p);
+        join_alg(t);
+        i++;
+    }
+
+    free_product_params(p, 1);
 
     return args;
 }
@@ -49,4 +62,5 @@ void stress_test(void) {
             pthread_join(threads[i], NULL);
         #endif
     }
+    free(threads);
 }
