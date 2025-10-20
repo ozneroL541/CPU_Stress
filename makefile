@@ -1,14 +1,14 @@
 BIN=bin
 IDIR =include
-CFLAGS=-I$(IDIR) -Werror -Wextra -ansi -pedantic -Wuninitialized
+CFLAGS=-I$(IDIR) -Wextra -ansi -pedantic -Wuninitialized -Werror
 CFLAGS_tables = -Wno-unused-parameter
 CFLAGS_main = -Wall
 LIBS = -lpthread
 ODIR =obj
-_OBJ = main.o tables.o buffer_blocks.o modified_alg.o modified_multi_block_alg.o original_alg.o original_multi_block_alg.o product_executor.o alg_threads.o tables_manager.o
+_OBJ = main.o tables.o buffer_blocks.o modified_alg.o modified_multi_block_alg.o original_alg.o original_multi_block_alg.o product_executor.o alg_threads.o tables_manager.o cpu_specs.o stresser.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 SRC = src
-_OUTPUT = blocks
+_OUTPUT = cpu_stress
 OUTPUT = $(BIN)/$(_OUTPUT)
 ICX := $(shell command -v icx 2>/dev/null)
 ifeq ($(ICX),)
