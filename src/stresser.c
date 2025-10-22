@@ -15,11 +15,19 @@ THREAD_RETURN mini_stress(void *args) {
     unsigned char i = 0;
 
     if ((tbls = init_rs(br, bs)) == NULL){
-        return (THREAD_RETURN) 1;
+        #ifdef _WIN32
+            return 1;
+        #else
+            pthread_exit((void *)1);
+        #endif
     }
     if ((p = init_product_params(tbls, init_alg_c(original_algorithm), 0)) == NULL) {
         free_tables(tbls, 1);
-        return (THREAD_RETURN) 1;
+        #ifdef _WIN32
+            return 1;
+        #else
+            pthread_exit((void *)1);
+        #endif
     }
 
     while (i < 5) {
@@ -30,7 +38,11 @@ THREAD_RETURN mini_stress(void *args) {
 
     free_product_params(p, 1);
 
-    return args;
+    #ifdef _WIN32
+        return (DWORD_PTR) args;
+    #else
+        pthread_exit(args);
+    #endif
 }
 
 void stress_test(void) {

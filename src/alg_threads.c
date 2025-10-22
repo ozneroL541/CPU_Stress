@@ -4,7 +4,11 @@ THREAD_RETURN run_algorithm(void * params) {
     /** Product thread */
     product_t * p = (product_t *) params;
     p->result = execute_product_simulation(p->params);
-    return (THREAD_RETURN)(NULL);
+    #ifdef _WIN32
+        return 0;
+    #else
+        pthread_exit(NULL);
+    #endif
 }
 
 product_t * start_alg(product_params* params) {
@@ -16,9 +20,9 @@ product_t * start_alg(product_params* params) {
         p->params = params;
         p->result = 0;
         #ifdef _WIN32
-            thread_created =((p->thread = CreateThread(NULL, 0, run_algorithm, (void *)p, 0, NULL)) != NULL);
-        #else
             thread_created = (pthread_create(&(p->thread), NULL, run_algorithm, (void *)p) == 0);
+        #else
+            thread_created =((p->thread = CreateThread(NULL, 0, run_algorithm, (void *)p, 0, NULL)) != NULL);
         #endif
         if (!thread_created) {
             free(p);
@@ -52,7 +56,11 @@ THREAD_RETURN init_t(void * arg) {
     unsigned long * size = (unsigned long *) arg;
     /** Generated table */
     char * table = gen_table(*size);
-    return (THREAD_RETURN) table;
+    #ifdef _WIN32
+        return (DWORD_PTR) table;
+    #else
+        pthread_exit((void *)table);
+    #endif
 }
 
 tables * init_rs(const unsigned long r_blocks, const unsigned long s_blocks) {
@@ -68,8 +76,14 @@ tables * init_rs(const unsigned long r_blocks, const unsigned long s_blocks) {
         s_t = CreateThread(NULL, 0, init_t, (void *)&s_blocks, 0, NULL);
         WaitForSingleObject(r_t, INFINITE);
         WaitForSingleObject(s_t, INFINITE);
-        r = (char *) GetExitCodeThread(r_t, NULL);
-        s = (char *) GetExitCodeThread(s_t, NULL);
+       {
+            /** Result of the thread */
+            LPDWORD result = NULL;
+            GetExitCodeThread(r_t, result);
+            r = (char *)result;
+            GetExitCodeThread(s_t, result);
+            s = (char *)result;
+       }
         CloseHandle(r_t);
         CloseHandle(s_t);
     #else
