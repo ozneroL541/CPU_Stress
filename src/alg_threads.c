@@ -1,4 +1,5 @@
 #include "alg_threads.h"
+#include <stdio.h> /* TODO REMOVE */
 
 THREAD_RETURN run_algorithm(void * params) {
     /** Product thread */
@@ -70,20 +71,22 @@ tables * init_rs(const unsigned long r_blocks, const unsigned long s_blocks) {
     char * r = NULL, * s = NULL;
     /** Tables structure */
     tables * tbl = NULL;
-    
     #ifdef _WIN32
         r_t = CreateThread(NULL, 0, init_t, (void *)&r_blocks, 0, NULL);
         s_t = CreateThread(NULL, 0, init_t, (void *)&s_blocks, 0, NULL);
         WaitForSingleObject(r_t, INFINITE);
         WaitForSingleObject(s_t, INFINITE);
-       {
+        {
             /** Result of the thread */
-            LPDWORD result = NULL;
-            GetExitCodeThread(r_t, result);
+            LPVOID result = NULL;
+            fprintf(stderr, "TODO fix error here\n");
+            /* TODO fix error here*/
+            GetExitCodeThread(r_t, &result);
+            fprintf(stderr, "If this print the error is fixed\n");
             r = (char *)result;
             GetExitCodeThread(s_t, result);
             s = (char *)result;
-       }
+        }
         CloseHandle(r_t);
         CloseHandle(s_t);
     #else

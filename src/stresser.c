@@ -1,5 +1,4 @@
 #include "stresser.h"
-#include <stdio.h>
 
 THREAD_RETURN mini_stress(void *args) {
     /** Number of blocks in R table */
@@ -12,7 +11,7 @@ THREAD_RETURN mini_stress(void *args) {
     product_params * p = NULL;
     /** Thread */
     product_t * t = NULL;
-    unsigned char i = 0;
+
 
     if ((tbls = init_rs(br, bs)) == NULL){
         #ifdef _WIN32
@@ -29,11 +28,9 @@ THREAD_RETURN mini_stress(void *args) {
             pthread_exit((void *)1);
         #endif
     }
-
-    while (i < 5) {
+    while (1) {
         t = start_alg(p);
         join_alg(t);
-        i++;
     }
 
     free_product_params(p, 1);
@@ -52,6 +49,9 @@ void stress_test(void) {
     unsigned long i = 0;
     /** Threads */
     thread_t * threads = NULL;
+
+    /* TODO REMOVE */
+    cpu_threads = 1;
 
     /* Allocate threads */
     threads = (thread_t *)malloc(sizeof(thread_t) * cpu_threads);
