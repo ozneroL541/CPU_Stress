@@ -19,6 +19,18 @@ typedef struct {
     thread_t thread;
 } product_t;
 
+/** 
+ * Structure to hold parameters to initialize a table
+ * @param size Size of the table to generate
+ * @param table Pointer to the generated table
+ */
+typedef struct {
+    /** Size of the table to generate */
+    unsigned long size;
+    /** Pointer to the generated table */
+    char * table;
+} table_init_params;
+
 /**
  * Thread function to run the product simulation algorithm
  * @param params Pointer to the parameters for the algorithm
@@ -39,6 +51,13 @@ product_t * start_alg(product_params* params);
  * @return Result of the algorithm execution, 0 on error
  */
 unsigned long join_alg(product_t* p);
+
+/** 
+ * Table thread initializer
+ * @param arg Pointer to the table_init_params structure
+ * @return NULL
+ */
+THREAD_RETURN init_t(void * arg);
 
 /** 
  * Initialize the tables structure with generated tables

@@ -1,5 +1,4 @@
 #include "alg_threads.h"
-#include <stdio.h> /* TODO REMOVE */
 
 THREAD_RETURN run_algorithm(void * params) {
     /** Product thread */
@@ -49,18 +48,15 @@ unsigned long join_alg(product_t* p) {
     return res;
 }
 
-/** 
- * Table thread initializer
- */
 THREAD_RETURN init_t(void * arg) {
-    /** Size pointer */
-    unsigned long * size = (unsigned long *) arg;
+    /** Table initialization parameters */
+    table_init_params * params = (table_init_params *) arg;
     /** Generated table */
-    char * table = gen_table(*size);
+    params->table = gen_table(params->size);
     #ifdef _WIN32
-        return (DWORD_PTR) table;
+        return 0;
     #else
-        pthread_exit((void *)table);
+        pthread_exit(NULL);
     #endif
 }
 
@@ -71,30 +67,39 @@ tables * init_rs(const unsigned long r_blocks, const unsigned long s_blocks) {
     char * r = NULL, * s = NULL;
     /** Tables structure */
     tables * tbl = NULL;
+    /** R table initialization parameters */
+    table_init_params * r_params = NULL;
+    /** S table initialization parameters */
+    table_init_params * s_params = NULL;
+
+    if ((r_params = (table_init_params *) malloc(sizeof(table_init_params))) == NULL) {
+        return NULL;
+    }
+    if ((s_params = (table_init_params *) malloc(sizeof(table_init_params))) == NULL) {
+        free(r_params);
+        return NULL;
+    }
+    r_params->size = r_blocks;
+    s_params->size = s_blocks;
+    r = r_params->table = NULL;
+    s = s_params->table = NULL;
     #ifdef _WIN32
-        r_t = CreateThread(NULL, 0, init_t, (void *)&r_blocks, 0, NULL);
-        s_t = CreateThread(NULL, 0, init_t, (void *)&s_blocks, 0, NULL);
+        r_t = CreateThread(NULL, 0, init_t, (void *)r_params, 0, NULL);
+        s_t = CreateThread(NULL, 0, init_t, (void *)s_params, 0, NULL);
         WaitForSingleObject(r_t, INFINITE);
         WaitForSingleObject(s_t, INFINITE);
-        {
-            /** Result of the thread */
-            LPVOID result = NULL;
-            fprintf(stderr, "TODO fix error here\n");
-            /* TODO fix error here*/
-            GetExitCodeThread(r_t, &result);
-            fprintf(stderr, "If this print the error is fixed\n");
-            r = (char *)result;
-            GetExitCodeThread(s_t, result);
-            s = (char *)result;
-        }
         CloseHandle(r_t);
         CloseHandle(s_t);
     #else
-        pthread_create(&r_t, NULL, init_t, (void *)&r_blocks);
-        pthread_create(&s_t, NULL, init_t, (void *)&s_blocks);
-        pthread_join(r_t, (void **)&r);
-        pthread_join(s_t, (void **)&s);
+        pthread_create(&r_t, NULL, init_t, (void *)r_params);
+        pthread_create(&s_t, NULL, init_t, (void *)s_params);
+        pthread_join(r_t, NULL);
+        pthread_join(s_t, NULL);
     #endif
+    r = r_params->table;
+    s = s_params->table;
+    free(r_params);
+    free(s_params);
 
     if (r == NULL || s == NULL) {
         if (r != NULL) {
@@ -105,7 +110,6 @@ tables * init_rs(const unsigned long r_blocks, const unsigned long s_blocks) {
         }
         return NULL;
     }
-
     tbl = init_tables(r, s, r_blocks, s_blocks);
     return tbl;
 }
