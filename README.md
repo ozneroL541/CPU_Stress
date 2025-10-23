@@ -21,16 +21,22 @@ Download the source code from Github
     git clone https://github.com/ozneroL541/CPU_Stress.git
 
 ## Compilation
-> It is suggested to use ICX Intel Compiler to compile this program, if it is not avaiable, GCC will be used.
+### Requirements
+To compile this program you need a [make](#https://directory.fsf.org/wiki/Make/) utility and a C compiler beetween [Intel oneAPI DPC++/C++ Compiler](#https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/dpc-compiler.html) and [GNU Compiler Collection](#https://gcc.gnu.org/).
+> By default the make file will use **ICX** if avaiable, otherwise **GCC** will be used.
 
 To compile run:
 
     make
 
 ## Execution
-To execute the program run
+To execute the program on Posix Operative Systems run:
 ```
 bin/cpu_stress
+```
+On Windows run:
+```
+bin/cpu_stress.exe
 ```
 
 
