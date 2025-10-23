@@ -23,6 +23,8 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structproduct__t}{product\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structtable__init__params}{table\+\_\+init\+\_\+params}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -32,6 +34,8 @@ struct \mbox{\hyperlink{structproduct__t}{product\+\_\+t}}
 \mbox{\hyperlink{structproduct__t}{product\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{alg__threads_8h_a4501d3d79aea75f96097444cb533a85d}{start\+\_\+alg}} (\mbox{\hyperlink{structproduct__params}{product\+\_\+params}} \texorpdfstring{$\ast$}{*}params)
 \item 
 unsigned long \mbox{\hyperlink{alg__threads_8h_a44c325b42ee050db08e4b853aa9047d0}{join\+\_\+alg}} (\mbox{\hyperlink{structproduct__t}{product\+\_\+t}} \texorpdfstring{$\ast$}{*}p)
+\item 
+\mbox{\hyperlink{threads_8h_a551918420acd27a8e8502a861d38e3a6}{THREAD\+\_\+\+RETURN}} \mbox{\hyperlink{alg__threads_8h_a4d7dea276fab84f77b8b93097de7d3aa}{init\+\_\+t}} (void \texorpdfstring{$\ast$}{*}arg)
 \item 
 \mbox{\hyperlink{structtables}{tables}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{alg__threads_8h_a83a3bb02511d61f2ba553229079906d4}{init\+\_\+rs}} (const unsigned long r\+\_\+blocks, const unsigned long s\+\_\+blocks)
 \end{DoxyCompactItemize}
@@ -60,7 +64,27 @@ Table initializer thread
 
 Tables
 
-Tables structure\Hypertarget{alg__threads_8h_a44c325b42ee050db08e4b853aa9047d0}\index{alg\_threads.h@{alg\_threads.h}!join\_alg@{join\_alg}}
+Tables structure
+
+R table initialization parameters
+
+S table initialization parameters\Hypertarget{alg__threads_8h_a4d7dea276fab84f77b8b93097de7d3aa}\index{alg\_threads.h@{alg\_threads.h}!init\_t@{init\_t}}
+\index{init\_t@{init\_t}!alg\_threads.h@{alg\_threads.h}}
+\doxysubsubsection{\texorpdfstring{init\_t()}{init\_t()}}
+{\footnotesize\ttfamily \label{alg__threads_8h_a4d7dea276fab84f77b8b93097de7d3aa} 
+\mbox{\hyperlink{threads_8h_a551918420acd27a8e8502a861d38e3a6}{THREAD\+\_\+\+RETURN}} init\+\_\+t (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{arg}{}\end{DoxyParamCaption})}
+
+Table thread initializer 
+\begin{DoxyParams}{Parameters}
+{\em arg} & Pointer to the \doxylink{structtable__init__params}{table\+\_\+init\+\_\+params} structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL 
+\end{DoxyReturn}
+Table initialization parameters
+
+Generated table\Hypertarget{alg__threads_8h_a44c325b42ee050db08e4b853aa9047d0}\index{alg\_threads.h@{alg\_threads.h}!join\_alg@{join\_alg}}
 \index{join\_alg@{join\_alg}!alg\_threads.h@{alg\_threads.h}}
 \doxysubsubsection{\texorpdfstring{join\_alg()}{join\_alg()}}
 {\footnotesize\ttfamily \label{alg__threads_8h_a44c325b42ee050db08e4b853aa9047d0} 

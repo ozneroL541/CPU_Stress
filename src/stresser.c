@@ -52,9 +52,6 @@ void stress_test(void) {
     /** Threads */
     thread_t * threads = NULL;
 
-    /* TODO REMOVE */
-    cpu_threads = 1;
-
     /* Allocate threads */
     threads = (thread_t *)malloc(sizeof(thread_t) * cpu_threads);
     if (threads == NULL) {
