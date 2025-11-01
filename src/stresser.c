@@ -12,8 +12,6 @@ THREAD_RETURN mini_stress(void *args) {
     /** Thread */
     product_t * t = NULL;
 
-
-
     if ((tbls = init_rs(br, bs)) == NULL){
         #ifdef _WIN32
             return 1;

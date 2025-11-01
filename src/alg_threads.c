@@ -20,7 +20,7 @@ product_t * start_alg(product_params* params) {
         p->params = params;
         p->result = 0;
         #ifdef _WIN32
-            thread_created = ((p->thread = CreateThread(NULL, 0, run_algorithm, (void *)p, 0, NULL)) == 0);
+            thread_created = ((p->thread = CreateThread(NULL, 0, run_algorithm, (void *)p, 0, NULL)) != 0);
         #else
             thread_created = (pthread_create(&(p->thread), NULL, run_algorithm, (void *)p) == 0);
         #endif
